@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bylmxphbbw8x1"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_oh23w"]
+[ext_resource type="Material" uid="uid://dk1sl56kklnec" path="res://box_material.tres" id="2_3p40w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b3was"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7w7ky"]
+size = Vector3(10.4664, 0.803359, 10.7084)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1h2y4"]
+
+[node name="World" type="Node3D"]
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27768, 0)
+script = ExtResource("1_oh23w")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_b3was")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.15677)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_7w7ky")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10.6784, 0, 0, 0, 1.00174, 0, 0, 0, 10.7163, 0, 0, 0)
+material_override = ExtResource("2_3p40w")
+mesh = SubResource("BoxMesh_1h2y4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63717, 1.13003, 1.57574)
