@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://hssky2vltane"]
+
+[ext_resource type="Texture2D" uid="uid://thygppv5b3ev" path="res://icon.svg" id="1_23tni"]
+[ext_resource type="Script" path="res://Scripts/PlayerController.cs" id="1_pkmk7"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_pkmk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_23tni")
