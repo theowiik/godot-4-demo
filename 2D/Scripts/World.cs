@@ -20,10 +20,18 @@ public partial class World : Node2D
 
     public override void _PhysicsProcess(double delta)
     {
+        FollowTarget(delta);
+    }
+
+    private void FollowTarget(double delta)
+    {
         if (_follow == null)
             return;
 
-        _camera.Position = new Vector2(_camera.Position.X, _follow.Position.Y);
+        const int followSpeed = 5; // Should be a property
+        var diff = (_follow.Position - _camera.Position) * followSpeed * (float)delta;
+
+        _camera.Translate(diff);
     }
 
     private void OnBodyEntered(Node body)

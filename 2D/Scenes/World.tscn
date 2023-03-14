@@ -27,7 +27,7 @@ position = Vector2(1835, -432)
 scale = Vector2(62.24, 108.454)
 
 [node name="OutOfBounds2" parent="Out" instance=ExtResource("4_4rkre")]
-position = Vector2(692, 1104)
+position = Vector2(692, 2300)
 scale = Vector2(171.415, 37.1322)
 
 [node name="OutOfBounds" parent="Out" instance=ExtResource("4_4rkre")]
@@ -35,23 +35,23 @@ position = Vector2(-553, -371)
 rotation = -3.14159
 scale = Vector2(46.8534, -104.14)
 
-[node name="Node" type="Node" parent="."]
+[node name="Floors" type="Node" parent="."]
 
-[node name="Floor" parent="Node" instance=ExtResource("2_6bxj0")]
+[node name="Floor" parent="Floors" instance=ExtResource("2_6bxj0")]
 position = Vector2(236, 553)
 
-[node name="Floor2" parent="Node" instance=ExtResource("2_6bxj0")]
+[node name="Floor2" parent="Floors" instance=ExtResource("2_6bxj0")]
 position = Vector2(914, 559)
 
-[node name="Floor4" parent="Node" instance=ExtResource("2_6bxj0")]
+[node name="Floor4" parent="Floors" instance=ExtResource("2_6bxj0")]
 position = Vector2(1112, 228)
 rotation = 1.5708
 
-[node name="Floor3" parent="Node" instance=ExtResource("2_6bxj0")]
+[node name="Floor3" parent="Floors" instance=ExtResource("2_6bxj0")]
 position = Vector2(35, 227)
 rotation = 1.5708
 
-[node name="Floor3" parent="Node/Floor3" instance=ExtResource("2_6bxj0")]
+[node name="Floor3" parent="Floors/Floor3" instance=ExtResource("2_6bxj0")]
 position = Vector2(10, -553)
 rotation = 1.5708
 
