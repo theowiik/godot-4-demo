@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://belxpijd76oar"]
+[gd_scene load_steps=4 format=3 uid="uid://belxpijd76oar"]
 
+[ext_resource type="Script" path="res://Scripts/Spawner.cs" id="1_levod"]
 [ext_resource type="PackedScene" uid="uid://c8qw56wdsneoe" path="res://Objects/Wall.tscn" id="1_vt5up"]
+[ext_resource type="PackedScene" uid="uid://d37gn2etxnafq" path="res://Objects/Ball.tscn" id="3_eudrv"]
 
 [node name="World" type="Node2D"]
 
 [node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("1_levod")
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -21,3 +24,6 @@ scale = Vector2(15.8857, 1)
 position = Vector2(111, 223)
 rotation = 1.309
 scale = Vector2(15.8857, 1)
+
+[node name="Ball" parent="." instance=ExtResource("3_eudrv")]
+position = Vector2(177, 85)
