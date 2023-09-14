@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://belxpijd76oar"]
+
+[ext_resource type="PackedScene" uid="uid://c8qw56wdsneoe" path="res://Objects/Wall.tscn" id="1_vt5up"]
+
+[node name="World" type="Node2D"]
+
+[node name="Spawner" type="Node2D" parent="."]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource("1_vt5up")]
+position = Vector2(302, 369)
+scale = Vector2(15.8857, 1)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("1_vt5up")]
+position = Vector2(493, 224)
+rotation = 1.8326
+scale = Vector2(15.8857, 1)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("1_vt5up")]
+position = Vector2(111, 223)
+rotation = 1.309
+scale = Vector2(15.8857, 1)
