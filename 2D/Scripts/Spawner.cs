@@ -1,14 +1,24 @@
 using Godot;
-using System;
+
+namespace toybox.Scripts;
 
 public partial class Spawner : Node2D
 {
-    public override void _Ready()
+    [Signal]
+    public delegate void BallSpawnedEventHandler(Node2D ball, Vector2 globalPosition);
+
+    private readonly PackedScene BallScene = GD.Load<PackedScene>("res://Objects/Ball.tscn");
+
+    public override void _UnhandledInput(InputEvent @event)
     {
-        GD.Print("hello world");
+        if (@event.IsActionPressed("spawn_ball"))
+            SpawnBallAtMouse();
     }
 
-    public override void _Process(double delta)
+    private void SpawnBallAtMouse()
     {
+        var ball = BallScene.Instantiate();
+        var mousePos = GetGlobalMousePosition();
+        EmitSignal(SignalName.BallSpawned, ball, mousePos);
     }
 }
