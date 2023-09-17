@@ -19,6 +19,7 @@ public partial class World : Node2D
         _void.BodyEntered += OnVoidBodyEntered;
 
         AddChild(TimerFactory.StartedOneShot(10, () => GD.Print("Hello World!")));
+        AddChild(TimerFactory.StartedRepeating(1, () => GD.Print("1 second")));
     }
 
     private static void OnVoidBodyEntered(Node2D body)
