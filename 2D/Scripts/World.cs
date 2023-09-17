@@ -1,14 +1,16 @@
 using Godot;
+using GodotSharper.AutoGetNode;
 
 namespace toybox.Scripts;
 
 public partial class World : Node2D
 {
+    [GetNode("Spawner")]
     private Spawner _spawner;
 
     public override void _Ready()
     {
-        _spawner = GetNode<Spawner>("Spawner");
+        this.GetNodes();
         _spawner.BallSpawned += OnBallSpawned;
     }
 
